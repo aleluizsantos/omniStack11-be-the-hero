@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+const generationUniqueId = require('../utils/generetionUniqueId');
 const connection = require('../database/connection');
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
         const { name, email, whatsapp, city, uf } = req.body;
 
         //Gerar uma chave para usar com Id
-        const id = crypto.randomBytes(4).toString('HEX');
+        const id = generationUniqueId();
 
         await connection('ongs').insert({
             id,

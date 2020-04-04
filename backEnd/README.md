@@ -10,3 +10,17 @@ Creation of the Backend developed on Node.js platform, during the week OmniStack
 ## Joi
 >Link Api [Joi](https://hapi.dev/module/joi/)
 
+## Criação de Teste
+Para utilizarmos teste em nossa aplicação utilizaremo o Framework Jest, sendo assim, na raiz do projeto executa o seguinte comando:
+
+>npm install jest
+
+* Após a instalação do Jest, realizamos algumas configurações executando os seguintes comandos: 
+    - >npx jest --init
+    - Responda algumas perguntas:
+        - Would you kike to use Jest when running "test" script in "package.json"? Yes
+        - Choose the teste environment that will be used for testing: escolha Node ou jsdom
+        - Do you want Jest to add coverage reports: N
+        - Automatically clear mock calls and instances between eery test? Yes
+
+Deste modo, é criado um arquivo com o nome de *'jest.config.js'* 
