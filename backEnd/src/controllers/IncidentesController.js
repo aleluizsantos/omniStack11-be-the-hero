@@ -49,6 +49,10 @@ module.exports = {
             .select('ong_id') //Selecionar apenas a coluna ong_id
             .first();
 
+        if(!incidents) {
+            return  resp.status(401).json({ error: 'Incident does not exist' })
+        }
+        
         if(incidents.ong_id !== ong_id) {
             return resp.status(401).json({ error: 'Operation not permitted'})
         }

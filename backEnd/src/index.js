@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
 const cors = require('cors');
+const { errors } = require('celebrate');
 
 const app = express();
 
@@ -8,6 +9,10 @@ const app = express();
 app.use(cors());
 //Informar que estaremos utilizando JSON para as requisições
 app.use(express.json()); 
+app.use(routes);
+app.use(errors());
+
+app.listen(3333);
 
 /*
 * TIPOS DE PARAMETROS
@@ -28,7 +33,3 @@ app.use(express.json());
  * 2) Usar uma Query Builder por ser o ==>> KNEX.JS
  *    ex: table('users').select('*').where(...)...
  */
-
-app.use(routes);
-
-app.listen(3333);
